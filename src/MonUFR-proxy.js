@@ -5,12 +5,12 @@ import * as dotenv from 'dotenv'
 
 dotenv.config();
 
-const allowedOrigins = process.ALLOWED_ORIGINS.split(',');
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
 
 https.createServer(
     {
-        key: fs.readFileSync(process.SSL_PRIVATEKEY),
-        cert: fs.readFileSync(process.SSL_FULLCHAIN),
+        key: fs.readFileSync(process.env.SSL_PRIVATEKEY),
+        cert: fs.readFileSync(process.env.SSL_FULLCHAIN),
     }, 
     (request, response) => {
     if(request.method != "GET") {
@@ -57,7 +57,7 @@ https.createServer(
         response.end(JSON.stringify({ response: false }));
         return false;
     });
-}).listen(process.SERVER_PORT);
+}).listen(process.env.SERVER_PORT);
 
 function parseUrl(url) {
     let urlData = {};
