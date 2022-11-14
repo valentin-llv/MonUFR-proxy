@@ -1,0 +1,13 @@
+{
+  "name": "mnoufr-proxy",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev:node",
+    "dev:node": "nodemon src/MonUFR-proxy.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.20"
+  }
+}
