@@ -1,7 +1,7 @@
 import https from "https";
 import fs from 'fs';
 import fetch from 'node-fetch';
-import * as dotenv from 'dotenv'
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 
